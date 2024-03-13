@@ -21,7 +21,8 @@ const config: Config = {
       "white": "#ffffff",
       "logo-color": "#5D5D6D",
       "bgSecondary": "#F3F5F6",
-      "dark": "#737380"
+      "dark": "#737380",
+      "delete": "#DE3838"
     },
   },
   plugins: [],
