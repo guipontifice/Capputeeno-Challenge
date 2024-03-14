@@ -16,9 +16,6 @@ export function PrimaryInputWithIcons(props: InputProps) {
                         <SearchIcon />
                     </div>
                 </div>
-                <div className=" ml-2">
-                    <CartIcon />
-                </div>
             </div>
         </>
     )

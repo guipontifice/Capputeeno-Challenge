@@ -1,16 +1,26 @@
+"use client"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import { CartIcon } from "./cart-icon"
 
-const CartCount = () => {
-    <div className="w-4 h-4 text-white bg-delete"></div>
+interface CartCountProps {
+    count: number;
+}
+const CartCount: React.FC<CartCountProps> = ({ count }) => {
+    return (
+        <div className="flex justify-middle items-center">
+            <span className="text-sm ml-3 rounded-full pl-1 pb-3 w-4 h-4 text-white bg-delete fixed">{count}</span>
+        </div>
+    )
 }
 export function CartControl() {
-    const { value } = useLocalStorage('cart-items');
-
+    const { value } = useLocalStorage('cart-items', ['1']);
+    console.log(value)
     return (
-        <div>
+        <div className="">
             <CartIcon />
-            {value.length && <CartCount>{value.length}</CartCount>}
+            <div>
+                {value.length && <CartCount count={value.length} />}
+            </div>
         </div>
     )
 }
